@@ -1,19 +1,19 @@
 class FerrausEngrave < Formula
   desc "Engraving helper for ferraus: MusicXML/MEI in, SVG/PDF/PNG out, via Verovio (LGPL-3.0, isolated in this executable)"
   homepage "https://djynnius.github.io/ferraus"
-  version "0.1.0"
+  version "0.1.1"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/djynnius/ferraus/releases/download/v0.1.0/ferraus-engrave-aarch64-apple-darwin.tar.xz"
-    sha256 "7127918bbd69bd023ac1794dec013073c52d4ca8606ad021fdffeaf4e098da52"
+    url "https://github.com/djynnius/ferraus/releases/download/v0.1.1/ferraus-engrave-aarch64-apple-darwin.tar.xz"
+    sha256 "6fd4e7a0f2a2605501ee287b7f11c20df8f3d35acc29b876283bfd556698e681"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/djynnius/ferraus/releases/download/v0.1.0/ferraus-engrave-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "d453b9c6520473dc58791ceced430e57604af9d1ec1453908610fed3c0226b0e"
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.1/ferraus-engrave-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "a1dc5756e8ec42b07ed9e74685cf3d8398d4bccf6d4a1333153f1b445aebfe21"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/djynnius/ferraus/releases/download/v0.1.0/ferraus-engrave-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "4a3d9a3a0636d4b763b122acf01a403d9f7722ad780e953da924f256f4e0a1d9"
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.1/ferraus-engrave-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "44d33acb20bae3ca5cf94f40e0480894cb56f85221625d25c118396a1c175779"
     end
   end
   license "LGPL-3.0-or-later"
