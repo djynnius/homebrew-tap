@@ -1,19 +1,19 @@
 class FerrausPlughostVst3 < Formula
   desc "Out-of-process VST3 plugin host used by ferraus (GPLv3; speaks the same protocol as ferraus-plughost)"
   homepage "https://djynnius.github.io/ferraus"
-  version "0.1.0"
+  version "0.1.1"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/djynnius/ferraus/releases/download/v0.1.0/ferraus-plughost-vst3-aarch64-apple-darwin.tar.xz"
-    sha256 "4b9449ff746ca8b13ec2d5354dadc1e387faef6dcce25009cce7e9c4c5c4ce09"
+    url "https://github.com/djynnius/ferraus/releases/download/v0.1.1/ferraus-plughost-vst3-aarch64-apple-darwin.tar.xz"
+    sha256 "586cea814eb8fbb1fc4c5a4fa4f3414b723479b66ebd9246e6e2658e786c7f50"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/djynnius/ferraus/releases/download/v0.1.0/ferraus-plughost-vst3-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "b063c6a63c5438a1dc4e4b3f5a714b5b2cfe5e57aa0d9f247364ffc030528398"
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.1/ferraus-plughost-vst3-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "be6a923f08c0e38acfc33341b7ecd66dcc40387e4d2f4270bb012671291c09d9"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/djynnius/ferraus/releases/download/v0.1.0/ferraus-plughost-vst3-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "179ded83214c80337a14c85e2a20b6998ae312f673b8a9453e19915f73223f1f"
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.1/ferraus-plughost-vst3-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "5e3d3b2a0d1f7a554b38b793e733e38189ab71b2eff73ae554f74714ff487861"
     end
   end
   license "GPL-3.0-only"
