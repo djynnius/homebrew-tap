@@ -1,26 +1,34 @@
 class FerrausPlughostVst3 < Formula
-  desc "Out-of-process VST3 plugin host used by ferraus (GPLv3; speaks the same protocol as ferraus-plughost)"
+  desc "Out-of-process VST3 plugin host used by ferraus (speaks the same protocol as ferraus-plughost)"
   homepage "https://djynnius.github.io/ferraus"
-  version "0.1.1"
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/djynnius/ferraus/releases/download/v0.1.1/ferraus-plughost-vst3-aarch64-apple-darwin.tar.xz"
-    sha256 "586cea814eb8fbb1fc4c5a4fa4f3414b723479b66ebd9246e6e2658e786c7f50"
+  version "0.1.2"
+  if OS.mac?
+    if Hardware::CPU.arm?
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.2/ferraus-plughost-vst3-aarch64-apple-darwin.tar.xz"
+      sha256 "8a10b48a982d970fbca18e5c5ca4517b9f3bc8a5133303ee6401c2cda37ebe2b"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.2/ferraus-plughost-vst3-x86_64-apple-darwin.tar.xz"
+      sha256 "5b3e4da03f599e0d820089be8b0c655cf300bb5588c5d586ee34296fef412ac9"
+    end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/djynnius/ferraus/releases/download/v0.1.1/ferraus-plughost-vst3-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "be6a923f08c0e38acfc33341b7ecd66dcc40387e4d2f4270bb012671291c09d9"
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.2/ferraus-plughost-vst3-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "aa914394f7f25f5c0546c840a9adff9680ef678aa9674d3a651340c2586ec2d9"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/djynnius/ferraus/releases/download/v0.1.1/ferraus-plughost-vst3-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "5e3d3b2a0d1f7a554b38b793e733e38189ab71b2eff73ae554f74714ff487861"
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.2/ferraus-plughost-vst3-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "df78805241f11d9b4710231ce005d1a066fc119f111413774c5fbe04a17c4417"
     end
   end
-  license "GPL-3.0-only"
+  license any_of: ["Apache-2.0", "MIT"]
 
   BINARY_ALIASES = {
     "aarch64-apple-darwin":      {},
+    "aarch64-pc-windows-gnu":    {},
     "aarch64-unknown-linux-gnu": {},
+    "x86_64-apple-darwin":       {},
     "x86_64-pc-windows-gnu":     {},
     "x86_64-unknown-linux-gnu":  {},
   }.freeze
@@ -42,6 +50,9 @@ class FerrausPlughostVst3 < Formula
 
   def install
     if OS.mac? && Hardware::CPU.arm?
+      bin.install "ferraus-plughost-vst3"
+    end
+    if OS.mac? && Hardware::CPU.intel?
       bin.install "ferraus-plughost-vst3"
     end
     if OS.linux? && Hardware::CPU.arm?
