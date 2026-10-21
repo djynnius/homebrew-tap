@@ -1,28 +1,40 @@
 class Ferraus < Formula
   desc "A command-line audio workstation for scripts and AI agents"
   homepage "https://djynnius.github.io/ferraus"
-  version "0.1.1"
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/djynnius/ferraus/releases/download/v0.1.1/ferraus-aarch64-apple-darwin.tar.xz"
-    sha256 "cac30f7b87829bbf231d9e17dbcc80668b54d85b1a8cbf1cb2b8a83bdfd73721"
+  version "0.1.2"
+  if OS.mac?
+    if Hardware::CPU.arm?
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.2/ferraus-aarch64-apple-darwin.tar.xz"
+      sha256 "748137f554ba704f65d7ffd1cd1237d261a44cb10e72320829086f6603d753da"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.2/ferraus-x86_64-apple-darwin.tar.xz"
+      sha256 "0daaad31f34cd24b383fcc237b14036a81c6eada83418794d2935d14e35d1d7f"
+    end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/djynnius/ferraus/releases/download/v0.1.1/ferraus-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "75759ccc2fcd946ef83f9617bd089dcbf5b7f50ebc7b0f8da7f2a23d497363e8"
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.2/ferraus-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "ad400008023e283487dd1b8897cb04311aa1774eba4c05aa2f73355a8992ded5"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/djynnius/ferraus/releases/download/v0.1.1/ferraus-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "5fbd59a4519816389b24557207c8af4c543e61fff414fc71c66e41eaf3af97d5"
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.2/ferraus-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "def14a57a074574c3f58820dd52c118a7f7b8617a4c09561a082579e0a14526e"
     end
   end
   license any_of: ["Apache-2.0", "MIT"]
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":      {},
-    "aarch64-unknown-linux-gnu": {},
-    "x86_64-pc-windows-gnu":     {},
-    "x86_64-unknown-linux-gnu":  {},
+    "aarch64-apple-darwin":               {},
+    "aarch64-pc-windows-gnu":             {},
+    "aarch64-unknown-linux-gnu":          {},
+    "aarch64-unknown-linux-musl-dynamic": {},
+    "aarch64-unknown-linux-musl-static":  {},
+    "x86_64-apple-darwin":                {},
+    "x86_64-pc-windows-gnu":              {},
+    "x86_64-unknown-linux-gnu":           {},
+    "x86_64-unknown-linux-musl-dynamic":  {},
+    "x86_64-unknown-linux-musl-static":   {},
   }.freeze
 
   def target_triple
@@ -42,6 +54,9 @@ class Ferraus < Formula
 
   def install
     if OS.mac? && Hardware::CPU.arm?
+      bin.install "ferraus", "ferraus-plughost"
+    end
+    if OS.mac? && Hardware::CPU.intel?
       bin.install "ferraus", "ferraus-plughost"
     end
     if OS.linux? && Hardware::CPU.arm?
