@@ -1,28 +1,40 @@
 class FerrausEngrave < Formula
   desc "Engraving helper for ferraus: MusicXML/MEI in, SVG/PDF/PNG out, via Verovio (LGPL-3.0, isolated in this executable)"
   homepage "https://djynnius.github.io/ferraus"
-  version "0.1.1"
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/djynnius/ferraus/releases/download/v0.1.1/ferraus-engrave-aarch64-apple-darwin.tar.xz"
-    sha256 "6fd4e7a0f2a2605501ee287b7f11c20df8f3d35acc29b876283bfd556698e681"
+  version "0.1.2"
+  if OS.mac?
+    if Hardware::CPU.arm?
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.2/ferraus-engrave-aarch64-apple-darwin.tar.xz"
+      sha256 "b9c617cf391ab83cfa6432c2e9c9a7d986b9c793285fdf165bf24568dcc5c671"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.2/ferraus-engrave-x86_64-apple-darwin.tar.xz"
+      sha256 "3436b78df4ccb5cfa586f262c07fb91155e41a48259ed169105059651cbd8b42"
+    end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/djynnius/ferraus/releases/download/v0.1.1/ferraus-engrave-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "a1dc5756e8ec42b07ed9e74685cf3d8398d4bccf6d4a1333153f1b445aebfe21"
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.2/ferraus-engrave-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "b7369be8a0d02fcc9fc0340afb736abd8a6c1525f1e0a6ddb2e859e935c0abec"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/djynnius/ferraus/releases/download/v0.1.1/ferraus-engrave-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "44d33acb20bae3ca5cf94f40e0480894cb56f85221625d25c118396a1c175779"
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.2/ferraus-engrave-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "31ac5018e0404a6cb8323275a19925562d3968831e672e4c55b7024969e3d4f4"
     end
   end
   license "LGPL-3.0-or-later"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":      {},
-    "aarch64-unknown-linux-gnu": {},
-    "x86_64-pc-windows-gnu":     {},
-    "x86_64-unknown-linux-gnu":  {},
+    "aarch64-apple-darwin":               {},
+    "aarch64-pc-windows-gnu":             {},
+    "aarch64-unknown-linux-gnu":          {},
+    "aarch64-unknown-linux-musl-dynamic": {},
+    "aarch64-unknown-linux-musl-static":  {},
+    "x86_64-apple-darwin":                {},
+    "x86_64-pc-windows-gnu":              {},
+    "x86_64-unknown-linux-gnu":           {},
+    "x86_64-unknown-linux-musl-dynamic":  {},
+    "x86_64-unknown-linux-musl-static":   {},
   }.freeze
 
   def target_triple
@@ -42,6 +54,9 @@ class FerrausEngrave < Formula
 
   def install
     if OS.mac? && Hardware::CPU.arm?
+      bin.install "ferraus-engrave"
+    end
+    if OS.mac? && Hardware::CPU.intel?
       bin.install "ferraus-engrave"
     end
     if OS.linux? && Hardware::CPU.arm?
