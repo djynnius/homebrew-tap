@@ -1,25 +1,25 @@
 class FerrausEngrave < Formula
   desc "Engraving helper for ferraus: MusicXML/MEI in, SVG/PDF/PNG out, via Verovio (LGPL-3.0, isolated in this executable)"
   homepage "https://djynnius.github.io/ferraus"
-  version "0.1.3"
+  version "0.1.4"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/djynnius/ferraus/releases/download/v0.1.3/ferraus-engrave-aarch64-apple-darwin.tar.xz"
-      sha256 "13bb308514c9694cd99692a912e827b57ca27c82e8d7ea02070c458b8001d046"
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.4/ferraus-engrave-aarch64-apple-darwin.tar.xz"
+      sha256 "19e95413504c181dfc9c60ebd12448f77b4cbaadfdebe2c52fca623c5319d869"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/djynnius/ferraus/releases/download/v0.1.3/ferraus-engrave-x86_64-apple-darwin.tar.xz"
-      sha256 "b336c321e3c053d5d60d3d9979f761edc191d3c4dd2753642f0f996cfd1dc945"
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.4/ferraus-engrave-x86_64-apple-darwin.tar.xz"
+      sha256 "3d199ec3d4eda824c0de161486f6092a980491ae24590549f5678e0046a25792"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/djynnius/ferraus/releases/download/v0.1.3/ferraus-engrave-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "8a2708ab9a2fcf3d33db16824b23762df87842124928de22271d7c1f4fb319f5"
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.4/ferraus-engrave-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "601b76e8c6d4d3a7076aab34f84ca06fe5e5a128e59a33343e936dc7572ac6e3"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/djynnius/ferraus/releases/download/v0.1.3/ferraus-engrave-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "780acda1f9f513c632c871d150a683e9508eab85d0de6b386f71e983e49e5002"
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.4/ferraus-engrave-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "0cd73e99dcea6b567c6fd567aa255cacb59a9d04f0162bb54f9536aa55e7e760"
     end
   end
   license "LGPL-3.0-or-later"
