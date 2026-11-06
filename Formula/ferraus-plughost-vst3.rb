@@ -1,25 +1,25 @@
 class FerrausPlughostVst3 < Formula
   desc "Out-of-process VST3 plugin host used by ferraus (speaks the same protocol as ferraus-plughost)"
   homepage "https://djynnius.github.io/ferraus"
-  version "0.1.3"
+  version "0.1.4"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/djynnius/ferraus/releases/download/v0.1.3/ferraus-plughost-vst3-aarch64-apple-darwin.tar.xz"
-      sha256 "ffd392d6509d4270edeeab09b7ab7e1e2eb4d5e8ed4e60eb9e0de029f7952c06"
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.4/ferraus-plughost-vst3-aarch64-apple-darwin.tar.xz"
+      sha256 "b18ef45d242148c37e81f9bbf0a8c7043e46dcb31ec040ae61a9c957d7068a9d"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/djynnius/ferraus/releases/download/v0.1.3/ferraus-plughost-vst3-x86_64-apple-darwin.tar.xz"
-      sha256 "110c53b438de3f6c6ab0529368e01839dae9f14abfcf31be6a37b7bea584140d"
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.4/ferraus-plughost-vst3-x86_64-apple-darwin.tar.xz"
+      sha256 "413c281c07910ef6912375a1d444e89318c00e4a5e98ad36c6ffe39e33b5aedd"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/djynnius/ferraus/releases/download/v0.1.3/ferraus-plughost-vst3-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "90bb8a0593c75d5429ae2591af8cf8f6f707e2a06487a648c652458ee5bec6a2"
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.4/ferraus-plughost-vst3-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "abbba82d1bb378771a049e702578821c03828d27ba096130998536558707853b"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/djynnius/ferraus/releases/download/v0.1.3/ferraus-plughost-vst3-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "1cda6faf6be5eeace4e7d0829c83e7523de765d84d0399637703b3da93619739"
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.4/ferraus-plughost-vst3-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "f8775850e023bedd9357fbafd2721a68bc3317ee8908a0ceab9bfd61b162fe1e"
     end
   end
   license any_of: ["Apache-2.0", "MIT"]
