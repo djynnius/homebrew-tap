@@ -1,25 +1,25 @@
 class Ferraus < Formula
   desc "A command-line audio workstation for scripts and AI agents"
   homepage "https://djynnius.github.io/ferraus"
-  version "0.1.5"
+  version "0.1.6"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/djynnius/ferraus/releases/download/v0.1.5/ferraus-aarch64-apple-darwin.tar.xz"
-      sha256 "24b0ee716b4af67d8cab2f7b745e1513ee2d85ea589020c634aed72ad576631c"
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.6/ferraus-aarch64-apple-darwin.tar.xz"
+      sha256 "44808270f2b705182d1bdf1b8ff256de423fb5c1fd45bbf65b746f4a97479257"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/djynnius/ferraus/releases/download/v0.1.5/ferraus-x86_64-apple-darwin.tar.xz"
-      sha256 "b5733ab17fd673a1fcd640765b6340c043b3b68e1e1378acff1f57fb1ecd203b"
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.6/ferraus-x86_64-apple-darwin.tar.xz"
+      sha256 "3452eb66ec4c9c52aece1ff5492a89a7418affc83deae32c72eeed756b550667"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/djynnius/ferraus/releases/download/v0.1.5/ferraus-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "46de65402c2ac7bfa2a757f362ac54fe388f0aeb3ad13d5704a9ebf9b02afb28"
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.6/ferraus-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "f7e0f2dcc2c4a64fce61dbf633acb276679ee324f64f6480e1d2ae723983008b"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/djynnius/ferraus/releases/download/v0.1.5/ferraus-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "340de11e3130783f5942c08a0059f3862a641f485c447a300f81c9f27914d71d"
+      url "https://github.com/djynnius/ferraus/releases/download/v0.1.6/ferraus-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "ea60d7339d5159008e4c97e6be7bc64bf5e9d44bfc392adfc9651bc7c0bfd071"
     end
   end
   license any_of: ["Apache-2.0", "MIT"]
