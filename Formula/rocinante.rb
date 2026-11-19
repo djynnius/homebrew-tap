@@ -1,27 +1,27 @@
 class Rocinante < Formula
   desc "Terminal coding agent for local models with MCP, LSP, and subagents"
   homepage "https://github.com/djynnius/rocinante"
-  version "1.3.0"
+  version "1.4.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/djynnius/rocinante/releases/download/v1.3.0/rocinante-aarch64-apple-darwin.tar.gz"
-      sha256 "dedd5e39cfd7a568e9148fa1dc84fb46cda8e9b1c29168a0dfe0840230f353da"
+      url "https://github.com/djynnius/rocinante/releases/download/v1.4.0/rocinante-aarch64-apple-darwin.tar.gz"
+      sha256 "d5c036e0fce1d49a955578476a80baee6c507dc3a5e383ecfb78068711b101c6"
     end
     on_intel do
-      url "https://github.com/djynnius/rocinante/releases/download/v1.3.0/rocinante-x86_64-apple-darwin.tar.gz"
-      sha256 "9c15f0e22728da8ebd42e723763ff5b6bea716a3ed4424408f9f184d31eb9b41"
+      url "https://github.com/djynnius/rocinante/releases/download/v1.4.0/rocinante-x86_64-apple-darwin.tar.gz"
+      sha256 "184b14d95468e41bbcd746e179ce3831f2ff4cf0818d2c1903635c3513d7e9af"
     end
   end
   on_linux do
     on_arm do
-      url "https://github.com/djynnius/rocinante/releases/download/v1.3.0/rocinante-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "8c00c52f2f3e61b148fb3e9fd2ceb6812293e8a68323e67cbed80919543a6f9c"
+      url "https://github.com/djynnius/rocinante/releases/download/v1.4.0/rocinante-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "8ca85812f9263fc3df9cbd1d5250f0b228ed8618bb4a01e41203afe8ab73f6b9"
     end
     on_intel do
-      url "https://github.com/djynnius/rocinante/releases/download/v1.3.0/rocinante-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "1ab8c907d2af62dc7920ff28b78dc0df9ac3e32f4bcdf3b8bb702ccb8e121992"
+      url "https://github.com/djynnius/rocinante/releases/download/v1.4.0/rocinante-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "1fce9357e7cf49bef929533d1251dcf19a6955bf45036d045c0df6252b777815"
     end
   end
 
